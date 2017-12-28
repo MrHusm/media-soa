@@ -21,6 +21,9 @@ public class RedisKeyConstants {
     //图书目录缓存key
     public final static String CACHE_BOOK_CATALOG_KEY = "book_catalog_";
 
+    //图书目录缓存key
+    public final static String CACHE_BOOK_CATALOG_TYPE_KEY = "book_catalog_bid_%s_type_%s";
+
     //图书驱动key
     public final static String CACHE_DRIVE_BOOK_KEY = "drive_book_type_%s_status_%s";
 

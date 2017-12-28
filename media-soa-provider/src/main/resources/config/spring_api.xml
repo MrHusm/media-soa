@@ -11,4 +11,7 @@
 
 	<!-- 图书接口api -->
 	<dubbo:service interface="com.yxsd.kanshu.api.IBookApi" ref="bookApi" owner="hushengmeng" version="1.0" retries="0" timeout="10000" />
+
+	<!-- 章节接口api -->
+	<dubbo:service interface="com.yxsd.kanshu.api.IChapterApi" ref="chapterApi" owner="hushengmeng" version="1.0" retries="0" timeout="10000" />
 </beans>
