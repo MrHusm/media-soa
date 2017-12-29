@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="UserQqMapper">
+    <resultMap id="BaseResultMap" type="com.yxsd.kanshu.ucenter.model.UserQq">
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="user_id" property="userId" jdbcType="BIGINT" />
+        <result column="openid" property="openid" jdbcType="VARCHAR" />
+        <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+        <result column="figureurl" property="figureurl" jdbcType="VARCHAR" />
+        <result column="figureurl_1" property="figureurl1" jdbcType="VARCHAR" />
+        <result column="figureurl_2" property="figureurl2" jdbcType="VARCHAR" />
+        <result column="figureurl_qq_1" property="figureurlQq1" jdbcType="VARCHAR" />
+        <result column="figureurl_qq_2" property="figureurlQq2" jdbcType="VARCHAR" />
+        <result column="gender" property="gender" jdbcType="VARCHAR" />
+        <result column="is_yellow_vip" property="isYellowVip" jdbcType="INTEGER" />
+        <result column="vip" property="vip" jdbcType="INTEGER" />
+        <result column="yellow_vip_level" property="yellowVipLevel" jdbcType="INTEGER" />
+        <result column="level" property="level" jdbcType="INTEGER" />
+        <result column="is_yellow_year_vip" property="isYellowYearVip" jdbcType="INTEGER" />
+        <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Where">
+        <if test="userId != null"> and user_id= #{userId}</if>
+        <if test="openid != null and openid != ''"> and openid= #{openid}</if>
+        <if test="nickname != null and nickname != ''"> and nickname= #{nickname}</if>
+    </sql>
+    <sql id="Base_Column_List">
+        `id`,`user_id`,`openid`,`nickname`,`figureurl`,`figureurl_1`,`figureurl_2`,`figureurl_qq_1`,
+        `figureurl_qq_2`,`gender`,`is_yellow_vip`,`vip`,`yellow_vip_level`,`level`,`is_yellow_year_vip`,`update_date`,`create_date`
+    </sql>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select <include refid="Base_Column_List" />
+        from user_qq where id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from user_qq where id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <delete id="deleteByMap" parameterType="map">
+        delete from user_qq where 1=1
+        <include refid="Base_Where" />
+    </delete>
+
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="accountId" parameterType="com.yxsd.kanshu.ucenter.model.UserQq">
+        insert into user_qq
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="openid != null" >
+                openid,
+            </if>
+            <if test="nickname != null" >
+                nickname,
+            </if>
+            <if test="figureurl != null" >
+                figureurl,
+            </if>
+            <if test="figureurl1 != null" >
+                figureurl_1,
+            </if>
+            <if test="figureurl2 != null" >
+                figureurl_2,
+            </if>
+            <if test="figureurlQq1 != null" >
+                figureurl_qq_1,
+            </if>
+            <if test="figureurlQq2 != null" >
+                figureurl_qq_2,
+            </if>
+            <if test="gender != null" >
+                gender,
+            </if>
+            <if test="isYellowVip != null" >
+                is_yellow_vip,
+            </if>
+            <if test="vip != null" >
+                vip,
+            </if>
+            <if test="yellowVipLevel != null" >
+                yellow_vip_level,
+            </if>
+            <if test="level != null" >
+                level,
+            </if>
+            <if test="isYellowYearVip != null" >
+                is_yellow_year_vip,
+            </if>
+            <if test="updateDate != null" >
+                update_date,
+            </if>
+            <if test="createDate != null" >
+                create_date,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="userId != null" >
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="openid != null" >
+                #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null" >
+                #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurl != null" >
+                #{figureurl,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurl1 != null" >
+                #{figureurl1,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurl2 != null" >
+                #{figureurl2,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurlQq1 != null" >
+                #{figureurlQq1,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurlQq2 != null" >
+                #{figureurlQq2,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null" >
+                #{gender,jdbcType=VARCHAR},
+            </if>
+            <if test="isYellowVip != null" >
+                #{isYellowVip,jdbcType=INTEGER},
+            </if>
+            <if test="vip != null" >
+                #{vip,jdbcType=INTEGER},
+            </if>
+            <if test="yellowVipLevel != null" >
+                #{yellowVipLevel,jdbcType=INTEGER},
+            </if>
+            <if test="level != null" >
+                #{level,jdbcType=INTEGER},
+            </if>
+            <if test="isYellowYearVip != null" >
+                #{isYellowYearVip,jdbcType=INTEGER},
+            </if>
+            <if test="updateDate != null" >
+                #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createDate != null" >
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.yxsd.kanshu.ucenter.model.UserQq">
+        update user_qq
+        <set>
+            <if test="userId != null" >
+                user_id = #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="openid != null" >
+                openid = #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null" >
+                nickname = #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurl != null" >
+                figureurl = #{figureurl,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurl1 != null" >
+                figureurl_1 = #{figureurl1,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurl2 != null" >
+                figureurl_2 = #{figureurl2,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurlQq1 != null" >
+                figureurl_qq_1 = #{figureurlQq1,jdbcType=VARCHAR},
+            </if>
+            <if test="figureurlQq2 != null" >
+                figureurl_qq_2 = #{figureurlQq2,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null" >
+                gender = #{gender,jdbcType=VARCHAR},
+            </if>
+            <if test="isYellowVip != null" >
+                is_yellow_vip = #{isYellowVip,jdbcType=INTEGER},
+            </if>
+            <if test="vip != null" >
+                vip = #{vip,jdbcType=INTEGER},
+            </if>
+            <if test="yellowVipLevel != null" >
+                yellow_vip_level = #{yellowVipLevel,jdbcType=INTEGER},
+            </if>
+            <if test="level != null" >
+                level = #{level,jdbcType=INTEGER},
+            </if>
+            <if test="isYellowYearVip != null" >
+                is_yellow_year_vip = #{isYellowYearVip,jdbcType=INTEGER},
+            </if>
+            <if test="updateDate != null" >
+                update_date = #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createDate != null" >
+                create_date = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="getAll" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List" />
+        from user_qq where 1=1
+        <include refid="Base_Where" />
+    </select>
+    <select id="pageCount" resultType="java.lang.Integer" parameterType="map">
+        select count(1) from user_qq where 1=1
+        <include refid="Base_Where" />
+    </select>
+    <select id="pageData" resultMap="BaseResultMap" parameterType="map">
+        select
+        <include refid="Base_Column_List" />
+        from user_qq where 1=1
+        <include refid="Base_Where" />
+        order by create_date desc
+    </select>
+</mapper>
