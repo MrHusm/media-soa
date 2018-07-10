@@ -9,6 +9,9 @@
 	
 	<dubbo:protocol name="dubbo" port="${dubbo.port.mediasoa}" dispather="all" threadpool="cached" threads="5000" />
 
+	<!-- 用户接口api -->
+	<dubbo:service interface="com.yxsd.kanshu.api.IUserApi" ref="userApi" owner="hushengmeng" version="1.0" retries="0" timeout="10000" />
+
 	<!-- 图书接口api -->
 	<dubbo:service interface="com.yxsd.kanshu.api.IBookApi" ref="bookApi" owner="hushengmeng" version="1.0" retries="0" timeout="10000" />
 

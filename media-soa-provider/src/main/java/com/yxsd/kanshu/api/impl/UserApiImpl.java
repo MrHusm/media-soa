@@ -39,4 +39,5 @@ public class UserApiImpl implements IUserApi {
     public void charge(Long userId, Integer type, Integer channel, String orderNo, Integer price, Integer money, Integer virtual) {
         userService.charge(userId,type,channel,orderNo,price,money,virtual);
     }
+
 }

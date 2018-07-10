@@ -38,7 +38,7 @@ public interface IUserService extends IBaseService<User,Long> {
     /**
      * 充值
      * @param userId
-     * @param type 1：支付宝充值 2：微信充值 11:客服赠送 12:签到赠送
+     * @param type 1：支付宝充值 2：微信充值 11:客服赠送 12:签到赠送 13:新手礼包
      * @param orderNo 订单号
      * @param price 真钱值
      * @param virtual 赠送金额

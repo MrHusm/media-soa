@@ -36,6 +36,12 @@ public class RedisKeyConstants {
     //图书信息key
     public final static String CACHE_BOOK_KEY = "book_id_";
 
+    //作者图书信息key
+    public final static String CACHE_BOOKS_AUTHOR_KEY = "books_author_";
+
+    //图书相关图书信息key
+    public final static String CACHE_BOOKS_HIGH_CLICK_CID_KEY = "books_high_click_cid_";
+
     //充值赠返最大金额key
     public final static String CACHE_RECHARGE_MAX_VIRTUAL_KEY = "recharge_max_virtual";
 
@@ -45,5 +51,9 @@ public class RedisKeyConstants {
     //父id获取子分类key
     public final static String CACHE_CATEGORY_LIST_PID_KEY = "category_list_pid_";
 
+    //新用户福利key
+    public final static String CACHE_NEW_USER_WELFARE_KEY = "new_user_welfare";
 
+    //签到信息key
+    public final static String CACHE_QIANDAO_KEY = "new_qiandao";
 }

@@ -40,6 +40,11 @@ public class UserReceive implements Serializable {
     private Integer weiboStatus;
 
     /**
+     * 签到状态 0：未签到 1：签到中 2：签满 3：未签满
+     */
+    private Integer qiandaoStatus;
+
+    /**
      * 取消领取新手礼包vip的次数
      */
     private Integer cancelVipTimes;
@@ -126,5 +131,13 @@ public class UserReceive implements Serializable {
 
     public void setWeiboStatus(Integer weiboStatus) {
         this.weiboStatus = weiboStatus;
+    }
+
+    public Integer getQiandaoStatus() {
+        return qiandaoStatus;
+    }
+
+    public void setQiandaoStatus(Integer qiandaoStatus) {
+        this.qiandaoStatus = qiandaoStatus;
     }
 }
