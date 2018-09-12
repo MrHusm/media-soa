@@ -91,7 +91,8 @@ public class UserServiceImpl extends BaseServiceImpl<User, Long> implements IUse
                     if((userReceive.getTelStatus() != null && userReceive.getTelStatus() == 1)
                             || (userReceive.getQqStatus() != null && userReceive.getQqStatus() == 1)
                             || (userReceive.getWeiboStatus() != null && userReceive.getWeiboStatus() == 1)
-                            || (userReceive.getWeixinStatus() != null && userReceive.getWeixinStatus() == 1)){
+                            || (userReceive.getWeixinStatus() != null && userReceive.getWeixinStatus() == 1)
+                            || (userReceive.getHuaweiStatus() != null && userReceive.getHuaweiStatus() == 1)){
                         user.setTourist(false);
                     }
                 }

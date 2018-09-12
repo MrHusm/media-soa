@@ -40,6 +40,11 @@ public class UserReceive implements Serializable {
     private Integer weiboStatus;
 
     /**
+     * 华为账号绑定状态 0：未绑定 1：已绑定 2：已取消绑定
+     */
+    private Integer huaweiStatus;
+
+    /**
      * 签到状态 0：未签到 1：签到中 2：签满 3：未签满
      */
     private Integer qiandaoStatus;
@@ -131,6 +136,14 @@ public class UserReceive implements Serializable {
 
     public void setWeiboStatus(Integer weiboStatus) {
         this.weiboStatus = weiboStatus;
+    }
+
+    public Integer getHuaweiStatus() {
+        return huaweiStatus;
+    }
+
+    public void setHuaweiStatus(Integer huaweiStatus) {
+        this.huaweiStatus = huaweiStatus;
     }
 
     public Integer getQiandaoStatus() {

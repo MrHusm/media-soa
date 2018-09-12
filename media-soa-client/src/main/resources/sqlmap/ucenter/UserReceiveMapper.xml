@@ -9,6 +9,7 @@
         <result column="qq_status" property="qqStatus" jdbcType="INTEGER" />
         <result column="weixin_status" property="weixinStatus" jdbcType="INTEGER" />
         <result column="weibo_status" property="weiboStatus" jdbcType="INTEGER" />
+        <result column="huawei_status" property="huaweiStatus" jdbcType="INTEGER" />
         <result column="cancel_vip_times" property="cancelVipTimes" jdbcType="INTEGER" />
         <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
         <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
@@ -17,7 +18,7 @@
         <if test="userId != null"> and user_id= #{userId}</if>
     </sql>
     <sql id="Base_Column_List">
-        id,user_id,vip_status,tel_status,qq_status,weixin_status,weibo_status,cancel_vip_times,create_date,update_date
+        id,user_id,vip_status,tel_status,qq_status,weixin_status,weibo_status,huawei_status,cancel_vip_times,create_date,update_date
     </sql>
 
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
@@ -39,6 +40,7 @@
             <if test="qqStatus != null">qq_status,</if>
             <if test="weixinStatus != null">weixin_status,</if>
             <if test="weiboStatus != null">weibo_status,</if>
+            <if test="huaweiStatus != null">huawei_status,</if>
             <if test="cancelVipTimes != null">cancel_vip_times,</if>
             <if test="createDate != null">create_date,</if>
             <if test="updateDate != null">update_date,</if>
@@ -64,6 +66,9 @@
             </if>
             <if test="weiboStatus != null">
                 #{weiboStatus,jdbcType=INTEGER},
+            </if>
+            <if test="huaweiStatus != null">
+                #{huaweiStatus,jdbcType=INTEGER},
             </if>
             <if test="cancelVipTimes != null">
                 #{cancelVipTimes,jdbcType=INTEGER},
@@ -97,6 +102,9 @@
             </if>
             <if test="weiboStatus != null">
                 weibo_status = #{weiboStatus,jdbcType=INTEGER},
+            </if>
+            <if test="huaweiStatus != null">
+                huawei_status = #{huaweiStatus,jdbcType=INTEGER},
             </if>
             <if test="cancelVipTimes != null">
                 cancel_vip_times = #{cancelVipTimes,jdbcType=INTEGER},

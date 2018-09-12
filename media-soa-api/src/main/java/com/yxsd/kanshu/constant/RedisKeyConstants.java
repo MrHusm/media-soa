@@ -18,6 +18,9 @@ public class RedisKeyConstants {
     //根据用户id获取绑定微博key
     public final static String CACHE_USER_WEIBO_ID_KEY = "user_weibo_id_";
 
+    //根据用户id获取绑定华为账号key
+    public final static String CACHE_USER_HUAWEI_ID_KEY = "user_huawei_id_";
+
     //图书目录缓存key
     public final static String CACHE_BOOK_CATALOG_KEY = "book_catalog_";
 
